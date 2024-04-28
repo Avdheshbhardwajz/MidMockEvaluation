@@ -43,7 +43,13 @@ let department = document.querySelector("#department");
 department.addEventListener("change", function () {
   departmentvalue = department.value;
   fetchdata(
-    `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${pagenumber}&limit=${pagevalue}&filterBy=department&filterValue=${departmentvalue}`
+    `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${pagenumber}&limit=${pagevalue}${
+      departmentvalue
+        ? `&filterBy=department&filterValue=${departmentvalue}`
+        : ""
+    }${gendervalue ? `&filterBy=gender&filterValue=female` : ""}${
+      salaryvalue ? `&sort=salary&order=asc` : ""
+    }`
   );
 });
 
@@ -53,7 +59,13 @@ gender.addEventListener("change", function () {
   gendervalue = gender.value;
   console.log(gendervalue);
   fetchdata(
-    `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${pagenumber}&limit=${pagevalue}&filterBy=gender&filterValue=${gendervalue}`
+    `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${pagenumber}&limit=${pagevalue}${
+      departmentvalue
+        ? `&filterBy=department&filterValue=${departmentvalue}`
+        : ""
+    }${gendervalue ? `&filterBy=gender&filterValue=female` : ""}${
+      salaryvalue ? `&sort=salary&order=asc` : ""
+    }`
   );
 });
 
@@ -62,7 +74,13 @@ let salary = document.querySelector("#salary");
 salary.addEventListener("change", function () {
   salaryvalue = salary.value;
   fetchdata(
-    `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${pagenumber}&limit=${pagevalue}&sort=salary&order=${salaryvalue}`
+    `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${pagenumber}&limit=${pagevalue}${
+      departmentvalue
+        ? `&filterBy=department&filterValue=${departmentvalue}`
+        : ""
+    }${gendervalue ? `&filterBy=gender&filterValue=female` : ""}${
+      salaryvalue ? `&sort=salary&order=asc` : ""
+    }`
   );
 });
 

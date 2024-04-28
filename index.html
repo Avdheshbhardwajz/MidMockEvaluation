@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evaluation</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <!-- container for everything and to show all in the center -->
+    <div class="container">
+      <h1>Employee Management System</h1>
+      <!-- this is starting of navbar with filter and sorting functionality -->
+      <div class="menubar">
+        <label for="department">Filter by departments</label>
+        <select name="department" id="department">
+          <option>Select option</option>
+          <option value="hr">HR</option>
+          <option value="finance">FINANCE</option>
+          <option value="marketing">MARKETING</option>
+          <option value="operations">OPERATIONS</option>
+        </select>
+
+        <label for="gender">Filter by gender</label>
+        <select name="gender" id="gender">
+          <option>Select option</option>
+          <option value="male">MALE</option>
+          <option value="female">FEMALE</option>
+        </select>
+
+        <label for="salary">Filter by salary</label>
+        <select name="salary" id="salary">
+          <option>Select option</option>
+          <option value="asc">LOW TO HIGH</option>
+          <option value="desc">HIGH TO LOW</option>
+        </select>
+      </div>
+      <!-- this is end of navbar with filter and sorting functionality -->
+
+      <!-- tablee label will be here -->
+      <div class="labels">
+        <h3>S.No</h3>
+        <h3>NAME</h3>
+        <h3>GENDER</h3>
+        <h3>DEPARTMENT</h3>
+        <h3>SALARY</h3>
+      </div>
+      <!-- table label will be here  -->
+
+      <!-- item container will be this  -->
+
+      <div class="items"></div>
+      <!-- item container will be this  -->
+
+      <div class="labels">
+        <a class="prev" href="#">Prev</a>
+        <a class="next" href="#">Next</a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
